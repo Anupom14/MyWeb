@@ -1,0 +1,62 @@
+header{
+    background-color: rgb(179, 57, 57);
+    padding: 10px;
+    text-align: center;
+    font-size: 40px;
+}
+nav{
+    background-color: rgb(223, 223, 231);
+    overflow: hidden;
+    font-size: 18px;
+    padding-left: 10%;
+   
+}
+nav a{
+    text-decoration: none;
+    padding: 12px;
+    text-align: center;
+    float: left;
+    color: rgb(0, 0, 0);
+    
+}
+h5{
+    text-align: left;
+
+
+}
+
+/* Search box */
+
+
+.container{
+    width: 100%;
+    height: 100%;
+    background: #fdfafa;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    
+}
+form{
+    background: #ffffff;
+    width: 300px;
+    height: 30px;
+    display: flex;
+    
+}
+form input{
+    flex: 1;
+    border: none;
+    outline: none;
+    
+}
+form button{
+    background: tomato;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-size: large;
+}
