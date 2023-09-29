@@ -60,22 +60,11 @@ form .fa-solid{
     align-self: center;
     padding: 10px 10px;
     color: #0a0a0a;
-
 }
-/* Style the news list */
-.List-News {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    padding: 0 20px;
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
+
+
 
     
-}
 a{
 color: rgb(185, 3, 3);
     
@@ -88,6 +77,7 @@ footer{
 
 }
 
+/* Style image */
 #box{
     height: 380px;
     width: 300px;
@@ -104,5 +94,28 @@ footer{
 }
 #box:hover img{
     scale: 1.2;
+
+}
+
+
+/* Style the news list */
+
+
+.news-box{
+padding: 20px;
+margin-bottom: 20px;
+border: 1px solid #ddd;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+text-align: left;
+animation: slide-in 0.5s ease-out;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+flex-direction: column;
+padding: 0 20px;
+position: relative;
+max-width: 800px;
+margin: 0 auto;
 
 }
