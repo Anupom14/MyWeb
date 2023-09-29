@@ -60,6 +60,10 @@ form .fa-solid{
     align-self: center;
     padding: 10px 10px;
     color: #0a0a0a;
+    
+.fa-solid, .fas{
+    font-weight: 900;
+    width: fit-content;
 }
 /* Style the news list */
 .List-News {
