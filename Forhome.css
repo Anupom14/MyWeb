@@ -1,160 +1,157 @@
-header{
-    background-color: rgb(179, 57, 57);
-    padding: 10px;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.header {
+    background-color: #cc2323;
+    color: white;
+    padding: 20px 0;
     text-align: center;
-    font-size: 40px;
-    color: #ffffff;
 }
-nav{
-    background-color: rgb(223, 223, 231);
-    overflow: hidden;
-    font-size: 18px;
-    padding-left: 10%;
-   
+
+.header h1 {
+    margin: 0;
+    font-size: 36px;
 }
-nav a{
+
+.nav-links {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.nav-links a {
     text-decoration: none;
-    padding: 12px;
-    text-align: center;
-    float: left;
-    color: rgb(0, 0, 0);
-    
+    color: #333;
+    font-weight: bold;
+    margin: 0 20px;
+    font-size: 18px;
+    transition: color 0.3s ease;
 }
 
+.nav-links a:hover {
+    color: #fc1b1b;
+}
 
-
-/* Search box */
-
-
-.container{
-    width: 100%;
-    height: 100%;
-    background: #fdfafa;
+.search-bar {
+    margin-top: 20px;
+    text-align: right;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    justify-content: center;
-}
-form{
-    background: #ffffff;
-    width: 600px;
-    height: 55px;
-    display: flex;
-
-}
-form input{
-    flex: 1;
-    border: none;
-    outline: none;
-    
-}
-form button{
-    background: tomato;
-    padding: 10px 20px;
-    border: none;
-    outline: none;
-    color: #ffffff;
-    letter-spacing: 1px;
-    cursor: pointer;
-    font-size: large;
-}
-form .fa-solid{
-    align-self: center;
-    padding: 10px 10px;
-    color: #0a0a0a;
+    padding-right: 20px;
 }
 
-
-
-    
-a{
-color: rgb(185, 3, 3);
-    
-}
-
-
-footer{
-    background-color: rgb(37, 36, 34);
-    padding: 15px;
-
-}
-
-/* Style image */
-#box{
-    height: 380px;
+.search-input {
     width: 300px;
-    background-color: aqua;
-    overflow: hidden;
-}
-#box img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    transition: all ease 1s;
-    
-    
-}
-#box:hover img{
-    scale: 1.2;
-
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    margin-right: 10px;
+    font-size: 16px;
 }
 
-
-/* Style the news list */
-
-
-
-
-
-
-
-
-/* Add this to your "styles.css" file */
-
-.all{
-    background-color: #979797;
+.search-button {
+    padding: 10px 20px;
+    background-color: #680606;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
 }
 
-.content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.search-button:hover {
+    background-color: #45a049;
+}
+
+.article-container {
+    padding: 2px;
     max-width: 800px;
     margin: 0 auto;
-    padding: 2px;
-    background-color: #f9f9f9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ddd;
-
-}
-
-.image-box {
-    flex: 1;
-    padding: 10px;
-}
-
-.image-box img {
-    max-width: 100%;
-    height: auto;
-    display: block;
 }
 
 .article {
-    flex: 2;
-    border-radius: 5px;
-    
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
-h1 {
+.article-title {
     font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-decoration: underline;
 }
 
-p {
+.article-content {
     font-size: 16px;
-    color: #555;
+    line-height: 1.6;
 }
 
+.image-box {
+    width: 260px;
+    height: 146.25px;
+    object-fit: cover;
+    margin-right: 10px;
+    float: left;
+}
 
+.article:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
+.footer {
+    background-color: #232423;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
 
+@media (max-width: 767px) {
+    .nav-links {
+        text-align: center;
+        margin-top: 10px;
+    }
 
+    @media (max-width: 767px)
+     .image-box {
+    width: 230px;
+    height: 130.25px;
 
+    .nav-links a {
+        margin: 0 15px;
+        font-size: 14px;
+    }
+
+    .search-bar {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .search-input {
+        width: 80%;
+    }
+
+    .article-title {
+        font-size: 20px;
+    }
+
+    .article-content {
+        font-size: 14px;
+    }
+
+    .image-box {
+        width: 100px;
+        height: 56.25px;
+    }
+}
