@@ -7,20 +7,41 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+<script>
+window.addEventListener("scroll", ()=>{
+  document.querySelectorAll(".parallax").forEach(el=>{
+    let offset = window.pageYOffset * 0.4;
+    el.style.backgroundPosition = "center " + offset + "px";
+  });
+});
+</script>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-content">
+    <h1>Rivva<span>Digital</span></h1>
+    <p>The Expert Edge in Every Move</p>
+  </div>
+</div>
+
+<!-- HEADER -->
 <header class="site-header">
     <div class="header-container">
         <div class="logo">
             <span>Rivva</span><strong>Digital</strong>
         </div>
         <a href="https://wa.me/9365139915" target="_blank" class="header-btn">Contact Us</a>
-
     </div>
 </header>
 
-<body>
+<!-- CUSTOM CURSOR -->
+<div class="cursor"></div>
+<div class="cursor-blur"></div>
 
-<!-- HERO SECTION -->
-<section class="hero">
+<!-- HERO -->
+<section class="hero parallax">
     <div class="overlay"></div>
     <div class="hero-content">
         <h1>Rivva Digital</h1>
@@ -31,12 +52,9 @@
 </section>
 
 <!-- ABOUT -->
-<section class="about">
+<section class="about reveal">
     <h2>Why Rivva Digital?</h2>
-    <p>
-        We are a North-East focused digital marketing agency that helps businesses dominate their local market using powerful online strategies.  
-        We don’t guess — we grow.
-    </p>
+    <p>We are a North-East focused digital marketing agency that helps businesses dominate their local market using powerful online strategies.</p>
 
     <div class="features">
         <div class="card">📈 Lead Generation</div>
@@ -47,7 +65,7 @@
 </section>
 
 <!-- SERVICES -->
-<section class="services">
+<section class="services reveal">
     <h2>Our Core Services</h2>
     <div class="service-grid">
         <div class="service">Social Media Marketing</div>
@@ -59,24 +77,21 @@
     </div>
 </section>
 
-<!-- TRUST -->
-<section class="trust">
-    <h2>Why Business Owners Choose Us</h2>
-    <p>✔ Transparent Pricing  
-       ✔ Real Results  
-       ✔ Dedicated Growth Team  
-       ✔ North-East Market Specialists</p>
-</section>
-
-<!-- CTA -->
-<section class="cta">
-    <h2>Ready to Grow Your Business?</h2>
-    <p>Let us build your digital presence and bring customers to your door.</p>
-    <a href="#contact" class="btn dark">Start Now</a>
+<!-- ACHIEVEMENTS -->
+<section class="achievements reveal parallax">
+  <h2>Our Impact in Numbers</h2>
+  <div class="achieve-grid">
+    <div class="achieve-box"><h3>50+</h3><p>Happy Clients</p></div>
+    <div class="achieve-box"><h3>90+</h3><p>Projects Completed</p></div>
+    <div class="achieve-box"><h3>5X</h3><p>Client Growth</p></div>
+    <div class="achieve-box"><h3>₹0.5 Cr+</h3><p>Revenue Generated</p></div>
+    <div class="achieve-box"><h3>India</h3><p>Serving Businesses Nationwide</p></div>
+    <div class="achieve-box"><h3>High</h3><p>Impact Campaigns</p></div>
+  </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact" id="contact">
+<section class="contact reveal" id="contact">
   <h2>Contact Rivva Digital</h2>
 
   <form id="leadForm">
@@ -88,32 +103,66 @@
   </form>
 </section>
 
-<script>
-document.getElementById("leadForm").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  fetch("https://script.google.com/macros/s/AKfycbwnTQi6d2u3jt-OF6b-TXUhSgoVWPD2MIQ2T9tVwfMjgmQ5YvqrFbYY-pq5m_GpVriq/exec", {
-    method: "POST",
-    body: JSON.stringify({
-      name: document.getElementById("name").value,
-      phone: document.getElementById("phone").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value
-    })
-  })
-  .then(res => {
-      alert("Thank you! Rivva Digital will contact you shortly.");
-      document.getElementById("leadForm").reset();
-  })
-  .catch(err => alert("Submission failed. Try again."));
-});
-</script>
-
-
 <!-- FOOTER -->
 <footer>
     <p>© 2026 Rivva Digital | The Expert Edge in Every Move</p>
 </footer>
+
+<!-- CURSOR SCRIPT -->
+<script>
+const cursor = document.querySelector(".cursor");
+const blur = document.querySelector(".cursor-blur");
+
+document.addEventListener("mousemove", e => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+  blur.style.left = e.clientX + "px";
+  blur.style.top = e.clientY + "px";
+});
+
+document.querySelectorAll("a, button").forEach(el => {
+  el.addEventListener("mouseenter", () => cursor.style.transform="translate(-50%,-50%) scale(2)");
+  el.addEventListener("mouseleave", () => cursor.style.transform="translate(-50%,-50%) scale(1)");
+});
+</script>
+
+<!-- LOADER SCRIPT -->
+<script>
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  loader.style.opacity = "0";
+  setTimeout(() => loader.style.display="none",1000);
+});
+</script>
+
+<!-- SCROLL REVEAL -->
+<script>
+function reveal(){
+  document.querySelectorAll(".reveal").forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight - 100){
+      el.classList.add("active");
+    }
+  });
+}
+window.addEventListener("scroll", reveal);
+reveal();
+</script>
+
+<!-- FORM -->
+<script>
+document.getElementById("leadForm").addEventListener("submit", function(e){
+e.preventDefault();
+fetch("https://script.google.com/macros/s/AKfycbwnTQi6d2u3jt-OF6b-TXUhSgoVWPD2MIQ2T9tVwfMjgmQ5YvqrFbYY-pq5m_GpVriq/exec", {
+method:"POST",
+body:JSON.stringify({
+name:name.value,
+phone:phone.value,
+email:email.value,
+message:message.value
+})
+}).then(()=>{alert("Thank you!"); this.reset();});
+});
+</script>
 
 </body>
 </html>
