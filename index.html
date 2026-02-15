@@ -7,14 +7,6 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<script>
-window.addEventListener("scroll", ()=>{
-  document.querySelectorAll(".parallax").forEach(el=>{
-    let offset = window.pageYOffset * 0.4;
-    el.style.backgroundPosition = "center " + offset + "px";
-  });
-});
-</script>
 
 <body>
 
@@ -28,12 +20,10 @@ window.addEventListener("scroll", ()=>{
 
 <!-- HEADER -->
 <header class="site-header">
-    <div class="header-container">
-        <div class="logo">
-            <span>Rivva</span><strong>Digital</strong>
-        </div>
-        <a href="https://wa.me/9365139915" target="_blank" class="header-btn">Contact Us</a>
-    </div>
+  <div class="header-container">
+    <div class="logo"><span>Rivva</span><strong>Digital</strong></div>
+    <a href="https://wa.me/9365139915" target="_blank" class="header-btn">Contact Us</a>
+  </div>
 </header>
 
 <!-- CUSTOM CURSOR -->
@@ -42,39 +32,38 @@ window.addEventListener("scroll", ()=>{
 
 <!-- HERO -->
 <section class="hero parallax">
-    <div class="overlay"></div>
-    <div class="hero-content">
-        <h1>Rivva Digital</h1>
-        <p class="tagline">The Expert Edge in Every Move</p>
-        <p class="subtext">Helping North-East Businesses Grow Faster With Smart Digital Marketing</p>
-        <a href="#contact" class="btn">Get Free Growth Audit</a>
-    </div>
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>Rivva Digital</h1>
+    <p class="tagline">The Expert Edge in Every Move</p>
+    <p class="subtext">Helping North-East Businesses Grow Faster With Smart Digital Marketing</p>
+    <a href="#contact" class="btn">Get Free Growth Audit</a>
+  </div>
 </section>
 
 <!-- ABOUT -->
 <section class="about reveal">
-    <h2>Why Rivva Digital?</h2>
-    <p>We are a North-East focused digital marketing agency that helps businesses dominate their local market using powerful online strategies.</p>
-
-    <div class="features">
-        <div class="card">📈 Lead Generation</div>
-        <div class="card">📊 Data Driven Marketing</div>
-        <div class="card">📍 Local Business Experts</div>
-        <div class="card">🚀 Fast Business Growth</div>
-    </div>
+  <h2>Why Rivva Digital?</h2>
+  <p>We are a North-East focused digital marketing agency that helps businesses dominate their local market using powerful online strategies.</p>
+  <div class="features">
+    <div class="card">📈 Lead Generation</div>
+    <div class="card">📊 Data Driven Marketing</div>
+    <div class="card">📍 Local Business Experts</div>
+    <div class="card">🚀 Fast Business Growth</div>
+  </div>
 </section>
 
 <!-- SERVICES -->
 <section class="services reveal">
-    <h2>Our Core Services</h2>
-    <div class="service-grid">
-        <div class="service">Social Media Marketing</div>
-        <div class="service">Google Ads & Meta Ads</div>
-        <div class="service">Business Branding</div>
-        <div class="service">Website & Landing Pages</div>
-        <div class="service">Lead Generation</div>
-        <div class="service">Local SEO</div>
-    </div>
+  <h2>Our Core Services</h2>
+  <div class="service-grid">
+    <div class="service">Social Media Marketing</div>
+    <div class="service">Google Ads & Meta Ads</div>
+    <div class="service">Business Branding</div>
+    <div class="service">Website & Landing Pages</div>
+    <div class="service">Lead Generation</div>
+    <div class="service">Local SEO</div>
+  </div>
 </section>
 
 <!-- ACHIEVEMENTS -->
@@ -93,22 +82,31 @@ window.addEventListener("scroll", ()=>{
 <!-- CONTACT -->
 <section class="contact reveal" id="contact">
   <h2>Contact Rivva Digital</h2>
-
   <form id="leadForm">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="tel" id="phone" placeholder="Phone Number" required>
-      <input type="email" id="email" placeholder="Email Address">
-      <textarea id="message" placeholder="Tell us about your business"></textarea>
-      <button type="submit">Get Free Consultation</button>
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="tel" id="phone" placeholder="Phone Number" required>
+    <input type="email" id="email" placeholder="Email Address">
+    <textarea id="message" placeholder="Tell us about your business"></textarea>
+    <button type="submit">Get Free Consultation</button>
   </form>
 </section>
 
 <!-- FOOTER -->
 <footer>
-    <p>© 2026 Rivva Digital | The Expert Edge in Every Move</p>
+<p>© 2026 Rivva Digital | The Expert Edge in Every Move</p>
 </footer>
 
-<!-- CURSOR SCRIPT -->
+<!-- PARALLAX -->
+<script>
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".parallax").forEach(el => {
+    let offset = window.pageYOffset * 0.3;
+    el.style.backgroundPosition = `center ${offset}px`;
+  });
+});
+</script>
+
+<!-- CURSOR -->
 <script>
 const cursor = document.querySelector(".cursor");
 const blur = document.querySelector(".cursor-blur");
@@ -119,19 +117,14 @@ document.addEventListener("mousemove", e => {
   blur.style.left = e.clientX + "px";
   blur.style.top = e.clientY + "px";
 });
-
-document.querySelectorAll("a, button").forEach(el => {
-  el.addEventListener("mouseenter", () => cursor.style.transform="translate(-50%,-50%) scale(2)");
-  el.addEventListener("mouseleave", () => cursor.style.transform="translate(-50%,-50%) scale(1)");
-});
 </script>
 
-<!-- LOADER SCRIPT -->
+<!-- LOADER -->
 <script>
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
   loader.style.opacity = "0";
-  setTimeout(() => loader.style.display="none",1000);
+  setTimeout(() => loader.style.display = "none", 1000);
 });
 </script>
 
@@ -148,19 +141,23 @@ window.addEventListener("scroll", reveal);
 reveal();
 </script>
 
-<!-- FORM -->
+<!-- FORM SUBMIT -->
 <script>
 document.getElementById("leadForm").addEventListener("submit", function(e){
-e.preventDefault();
-fetch("https://script.google.com/macros/s/AKfycbwnTQi6d2u3jt-OF6b-TXUhSgoVWPD2MIQ2T9tVwfMjgmQ5YvqrFbYY-pq5m_GpVriq/exec", {
-method:"POST",
-body:JSON.stringify({
-name:name.value,
-phone:phone.value,
-email:email.value,
-message:message.value
-})
-}).then(()=>{alert("Thank you!"); this.reset();});
+  e.preventDefault();
+
+  fetch("https://script.google.com/macros/s/AKfycbwnTQi6d2u3jt-OF6b-TXUhSgoVWPD2MIQ2T9tVwfMjgmQ5YvqrFbYY-pq5m_GpVriq/exec", {
+    method:"POST",
+    body:JSON.stringify({
+      name: document.getElementById("name").value,
+      phone: document.getElementById("phone").value,
+      email: document.getElementById("email").value,
+      message: document.getElementById("message").value
+    })
+  }).then(()=>{
+    document.getElementById("leadForm").reset();
+    alert("Thank you! Rivva Digital will contact you soon.");
+  });
 });
 </script>
 
