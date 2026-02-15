@@ -146,3 +146,49 @@ footer{
   section{padding:40px 5%;}
   .hero{padding:10px;}
 }
+/* HEADER */
+.site-header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:rgba(11,15,26,0.95);
+    backdrop-filter: blur(8px);
+    z-index:1000;
+    padding:12px 6%;
+    border-bottom:1px solid rgba(0,194,255,0.2);
+}
+
+.header-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:700;
+    color:#00c2ff;
+}
+
+.logo strong{
+    color:#f9c74f;
+}
+
+.header-btn{
+    background:#00c2ff;
+    padding:10px 22px;
+    border-radius:25px;
+    color:#000;
+    font-weight:600;
+    text-decoration:none;
+}
+
+.header-btn:hover{
+    background:#f9c74f;
+}
+
+/* Space for fixed header */
+.hero{
+    padding-top:90px;
+}
