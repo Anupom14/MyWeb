@@ -9,6 +9,22 @@
 </head>
 
 <body>
+  <script>
+function trackWhatsapp(){
+  let device = /mobile/i.test(navigator.userAgent) ? "Mobile" : "Desktop";
+  let page = window.location.pathname;
+
+  fetch("https://script.google.com/macros/s/AKfycbxoWTBB49ryk99uLyE8Ho7KOnFKDwfoayExX9NvKE1xbrJXWBtzL50iQLWWq2TVRsdBPA/exec?source=RivvaDigital&device="+device+"&page="+page+"&action=WhatsApp_Click");
+}
+</script>
+
+<a href="https://wa.me/9365139915?text=Hello%20Rivva%20Digital,%20I%20just%20requested%20a%20free%20consultation."
+   class="whatsapp-float"
+   target="_blank"
+   onclick="trackWhatsapp()">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+</a>
+
 
 <!-- LOADER -->
 <div id="loader">
@@ -206,8 +222,7 @@ document.getElementById("leadForm").addEventListener("submit", function(e){
       message: document.getElementById("message").value
     })
   }).then(()=>{
-    document.getElementById("leadForm").reset();
-    alert("Thank you! Rivva Digital will contact you soon.");
+    window.location.href = "thankyou.html";
   });
 });
 </script>
